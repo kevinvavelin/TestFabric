@@ -22,33 +22,26 @@ class TweetTableViewController: UITableViewController, TWTRTweetViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.title = "Tweets"
+        
         let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "composeTweet")
         self.navigationItem.rightBarButtonItem = composeButton
-//        Twitter.sharedInstance().logInWithCompletion { (session, sessionError) -> Void in
-//            if session != nil {
-                let timelineEndpoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-                var clientError : NSError?
-            println(Twitter.sharedInstance().APIClient)
-                let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: timelineEndpoint, parameters: nil, error: &clientError)
-                if request != nil {
-                    Twitter.sharedInstance().APIClient.sendTwitterRequest(request, completion: { (response, data, error) -> Void in
-                        if error == nil {
-                            var jsonError : NSError?
-                            let json : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as NSDictionary
-                            println(json)
-                        } else {
-                            println(error.localizedDescription)
-                        }
-                    })
+        
+        let timelineEndpoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        var clientError : NSError?
+        println(Twitter.sharedInstance().APIClient)
+        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: timelineEndpoint, parameters: nil, error: &clientError)
+        if request != nil {
+            Twitter.sharedInstance().APIClient.sendTwitterRequest(request, completion: { (response, data, error) -> Void in
+                if error == nil {
+                    var jsonError : NSError?
+                    let json : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as NSDictionary
+                    println(json)
+                } else {
+                    println(error.localizedDescription)
                 }
-//            }
-//        }
+            })
+        }
     
     }
 
@@ -71,14 +64,11 @@ class TweetTableViewController: UITableViewController, TWTRTweetViewDelegate {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
+
         return 0
     }
 
