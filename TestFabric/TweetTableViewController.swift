@@ -8,6 +8,7 @@
 
 import UIKit
 import TwitterKit
+import Crashlytics
 
 class TweetTableViewController: UITableViewController, TWTRTweetViewDelegate {
     
