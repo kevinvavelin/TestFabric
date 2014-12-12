@@ -28,21 +28,6 @@ class TweetTableViewController: UITableViewController, TWTRTweetViewDelegate {
         let composeButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Compose, target: self, action: "composeTweet")
         self.navigationItem.rightBarButtonItem = composeButton
         
-        let timelineEndpoint = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        var clientError : NSError?
-        println(Twitter.sharedInstance().APIClient)
-        let request = Twitter.sharedInstance().APIClient.URLRequestWithMethod("GET", URL: timelineEndpoint, parameters: nil, error: &clientError)
-        if request != nil {
-            Twitter.sharedInstance().APIClient.sendTwitterRequest(request, completion: { (response, data, error) -> Void in
-                if error == nil {
-                    var jsonError : NSError?
-                    let json : NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as NSDictionary
-                    println(json)
-                } else {
-                    println(error.localizedDescription)
-                }
-            })
-        }
     
     }
 
