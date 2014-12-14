@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1395D8D61A3E206200AE2220 /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1395D8D41A3E206200AE2220 /* MoPub.framework */; };
+		1395D8D71A3E206200AE2220 /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1395D8D51A3E206200AE2220 /* MoPub.bundle */; };
 		13E50A041A3A18150089FC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E50A031A3A18150089FC28 /* AppDelegate.swift */; };
 		13E50A061A3A18150089FC28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E50A051A3A18150089FC28 /* ViewController.swift */; };
 		13E50A091A3A18150089FC28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E50A071A3A18150089FC28 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1395D8D41A3E206200AE2220 /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
+		1395D8D51A3E206200AE2220 /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MoPub.bundle; sourceTree = "<group>"; };
 		13E509FE1A3A18150089FC28 /* TestFabric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestFabric.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13E50A021A3A18150089FC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13E50A031A3A18150089FC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			files = (
 				13E50A271A3A18600089FC28 /* TwitterKit.framework in Frameworks */,
 				13E50A2B1A3A19770089FC28 /* Crashlytics.framework in Frameworks */,
+				1395D8D61A3E206200AE2220 /* MoPub.framework in Frameworks */,
 				13E50A291A3A18600089FC28 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +109,8 @@
 		13E50A011A3A18150089FC28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1395D8D41A3E206200AE2220 /* MoPub.framework */,
+				1395D8D51A3E206200AE2220 /* MoPub.bundle */,
 				13E50A2A1A3A19770089FC28 /* Crashlytics.framework */,
 				13E50A241A3A18600089FC28 /* TwitterKit.framework */,
 				13E50A251A3A18600089FC28 /* TwitterKitResources.bundle */,
@@ -213,6 +220,7 @@
 			files = (
 				13E50A281A3A18600089FC28 /* TwitterKitResources.bundle in Resources */,
 				13E50A091A3A18150089FC28 /* Main.storyboard in Resources */,
+				1395D8D71A3E206200AE2220 /* MoPub.bundle in Resources */,
 				13E50A0E1A3A18150089FC28 /* LaunchScreen.xib in Resources */,
 				13E50A0B1A3A18150089FC28 /* Images.xcassets in Resources */,
 			);
@@ -450,6 +458,7 @@
 				13E50A1F1A3A18150089FC28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		13E50A201A3A18150089FC28 /* Build configuration list for PBXNativeTarget "TestFabricTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +467,7 @@
 				13E50A221A3A18150089FC28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

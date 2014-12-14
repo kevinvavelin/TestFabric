@@ -22,6 +22,8 @@
 	<string>1</string>
 	<key>Fabric</key>
 	<dict>
+		<key>APIKey</key>
+		<string>ENTER YOUR API KEY HERE</string>
 		<key>Kits</key>
 		<array>
 			<dict>
@@ -40,6 +42,12 @@
 				<dict/>
 				<key>KitName</key>
 				<string>Crashlytics</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>MoPub</string>
 			</dict>
 		</array>
 	</dict>

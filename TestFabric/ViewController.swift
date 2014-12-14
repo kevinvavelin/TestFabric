@@ -8,10 +8,15 @@
 
 import UIKit
 import TwitterKit
+import MoPub
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MPAdViewDelegate {
     
 //    var userId : String!
+    
+    
+    var adView : MPAdView = MPAdView(adUnitId: "ENTER YOUR UNIT ID HERE", size: MOPUB_BANNER_SIZE)
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,7 @@ class ViewController: UIViewController {
         })
         loginButton.center = self.view.center
         self.view.addSubview(loginButton)
+        println(loginButton.frame.size)
         let authenticateButton = DGTAuthenticateButton(authenticationCompletion:{(session:DGTSession!, error:NSError!) in
             // Play With Digit session
             if (session != nil) {
@@ -46,11 +52,20 @@ class ViewController: UIViewController {
         authenticateButton.frame.origin.x = loginButton.frame.origin.x
         authenticateButton.frame.origin.y = loginButton.frame.origin.y + loginButton.frame.size.height + 20
         self.view.addSubview(authenticateButton)
-
+        
+        self.adView.delegate = self
+        self.adView.frame = CGRectMake(0, self.view.bounds.size.height - MOPUB_BANNER_SIZE.height, MOPUB_BANNER_SIZE.width, MOPUB_BANNER_SIZE.height)
+        self.view.addSubview(self.adView)
+        self.adView.loadAd()
+    
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func viewControllerForPresentingModalView() -> UIViewController! {
+        return self
     }
 
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
